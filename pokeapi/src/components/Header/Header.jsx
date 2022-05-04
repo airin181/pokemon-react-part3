@@ -7,7 +7,7 @@ class Header extends Component {
 
      
       <img src={logo} alt="logo pokemon" />
-      <h3>Busca tu favorito y hazte con todos</h3>
+      <h3>Hazte con todos!</h3>
       
     </div>;
   }
