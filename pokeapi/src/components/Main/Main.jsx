@@ -12,6 +12,8 @@ const Main = () => {
 
   /*   const [loading, setLoading] = useState(true) */
 
+
+
   useEffect(() => {
 
     if (value !== "") {
@@ -20,15 +22,17 @@ const Main = () => {
         try {
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
           const result = response.data;
-          setPokemon([result, ...pokemon]); 
+          setPokemon([...pokemon,result]); 
+         
+          
 
         } catch (e) {
           setPokemon([]) 
         }
       }
-
       axiosPokemon();
     }
+    //eslint-disable-next-line
   }, [value]); //cada vez que cambie value (estado) se vuelve a lanzar useEffect()
 
   //aqui guardo el valor del input del pokemon que se busca
