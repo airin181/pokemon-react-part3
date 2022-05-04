@@ -1,0 +1,36 @@
+@import '../utils/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;600&display=swap');
+//
+
+
+@mixin header_style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Radio Canada', sans-serif;
+    & > img {
+            width: 15em;
+            margin-top: $spacing-md;
+        }
+        & > h3 {
+            border-bottom: dotted;
+    color: white;
+        }
+        & > .user{
+            display: flex;
+            & > p {
+                color: $text-color;
+                margin-right: $spacing-md;
+            }
+        }
+}
+.header{
+    background-color: $menu-color;
+    @include header_style();
+}
+.header-dark{
+    background-color: $menu-color-dark;
+    @include header_style();
+}
