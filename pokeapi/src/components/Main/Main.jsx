@@ -7,6 +7,8 @@ const Main = () => {
 
   //Llamamos a la función useState con valor inicial del estado falsy por defecto y nos devuelve dos constantes en un array. El primero es el estado actual y el segundo es el método para actualizar ese estado. 
 
+  
+
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemon] = useState([]); // Para guardar los pokemon
 
