@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searcher{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .form-searcher{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .form-searcher > input[type=text]:nth-child(1){
+    height: 3em;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .form-searcher > input[type=submit]:nth-child(2){
+
+    height: 3em;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    border-width: 1px;
+    margin-top: 1em;
+    border-radius: 5px;
+  }
+

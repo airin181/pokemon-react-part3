@@ -1,9 +1,10 @@
 import Main from './components/Main/Main'
 import Header from './components/Header'
+import './styles/styles.scss'
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <Header/>
       <Main/>
     </div>

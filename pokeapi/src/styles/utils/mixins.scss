@@ -1,0 +1,11 @@
+//como las variables pero con muchas mas propiedades
+//para cosas generales
+
+@mixin column {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}

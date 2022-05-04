@@ -1,0 +1,15 @@
+@import '../utils/variables.scss';
+@mixin footer_style {
+    color: $text-color;
+    bottom: 0;
+    position:absolute;
+    width: 100%;
+}
+.footer{
+ background-color: $menu-color;
+@include footer_style()
+}
+.footer-dark{
+background-color: $menu-color-dark;
+@include footer_style()
+}
