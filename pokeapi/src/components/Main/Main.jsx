@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Card from './Card/Card'
+import PokeList from './PokeList/PokeList';
 
 
 const Main = () => {
@@ -8,56 +8,58 @@ const Main = () => {
   //Llamamos a la función useState con valor inicial del estado falsy por defecto y nos devuelve dos constantes en un array. El primero es el estado actual y el segundo es el método para actualizar ese estado. 
 
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
-  const [pokemon, setPokemon] = useState(""); // Para guardar los pokemon
-  /*   const [loading, setLoading] = useState(true) */
-  console.log('clog de pokemon', pokemon);
+  const [pokemon, setPokemon] = useState([]); // Para guardar los pokemon
 
-  // equivale a un componentDidUpdate()
+  /*   const [loading, setLoading] = useState(true) */
+
   useEffect(() => {
 
     if (value !== "") {
       async function axiosPokemon() {
 
         try {
-          // Petición HTTP
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
           const result = response.data;
-
-          // Guarda en el array de pokemon el resultado (un obj de 1 pokemon). Procesa los datos.
-          /*         setTimeout(() => {
-                    setResult(response.data)
-                    setLoading(false)
-                }, 5000);*/
-                  setPokemon(result); 
+          setPokemon([result, ...pokemon]); 
 
         } catch (e) {
-          setPokemon([]) // No pintes nada
+          setPokemon([]) 
         }
       }
 
       axiosPokemon();
     }
-  }, [value]);
+  }, [value]); //cada vez que cambie value (estado) se vuelve a lanzar useEffect()
 
+  //aqui guardo el valor del input del pokemon que se busca
   const handleSubmit = e => {
     e.preventDefault();
-    setValue(e.target.search.value.toLowerCase()) // Modificando el estado de Value
+    const newPokemon = e.target.search.value
+    setValue(newPokemon)
     e.target.search.value = ""
   };
+
+  const removePokemon = (i) => {
+    //recibe la posicion de entrada y busca en el array de datos y lo borras
+    //FILTER: filtra un array, elimina el que cumpla una condición (posición i) y devuelve un nuevo array (sin ese elemento con posición i)
+  const remainingPokemon = pokemon.filter((poke, j)=> i!== j);
+  setPokemon(remainingPokemon);
+}   
 
 
   return (
     <section className='main'>
+
       <div className='searcher'>
-        <h1>Completa tu Pokédex!</h1>
+        <h1>Completa tu Pokédex introduciendo su nombre o su número identificador!</h1>
         <form onSubmit={handleSubmit} className="form-searcher">
           <input name="search" type="text" placeholder='Busca aquí tu pokemon' />
           <input type="submit" value="Buscar" />
         </form>
       </div>
 
-      {pokemon
-        ? <Card key={pokemon.id} value={pokemon}/> : ""}
+        <PokeList value={pokemon} remove={(i) => removePokemon(i)}></PokeList>  
+
     </section>
   )
 
