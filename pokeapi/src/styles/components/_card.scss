@@ -2,6 +2,10 @@
 width: 200px;
 }
 
+.card-content{
+    width: 100%;
+}
+
 .css-o69gx8-MuiCardMedia-root{
     width: 70%;
     object-fit: contain;
@@ -17,4 +21,6 @@ width: 200px;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        width: 350px;
 }
+
