@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokeList from './PokeList/PokeList';
+import pokeball from './../../assets/pokeball.png'
+
 
 
 const Main = () => {
@@ -57,9 +59,12 @@ const Main = () => {
     <section className='main'>
 
       <div className='searcher'>
-        <h1>Completa tu Pokédex introduciendo su nombre o su número identificador!</h1>
+        
+        <h1 className='h1-main'>Completa la Pokédex buscando tu pokemon por su nombre o usando su número de la Pokédex Nacional!</h1>
+      
         <form onSubmit={handleSubmit} className="form-searcher">
           <input name="search" type="text" placeholder='Busca aquí tu pokemon' />
+          
           <input type="submit" value="Buscar" />
         </form>
       </div>
