@@ -13,16 +13,21 @@ function CardPokemon ({value, remove}) {
   return (
     
     <Card sx={{ width: 250, margin:1 }}>
-      < CardMedia component="img" height="250" image={img} alt="pokemon" className='pokemon-img'/> 
-      <CardContent>
+
+      < CardMedia component="img" image={img} alt="pokemon" className='pokemon-img'sx={{ width: 300, margin:1 }}/> 
+
+      <div className='card-content'>
+      <CardContent >
         <Typography gutterBottom variant="h5" component="div"><b>{(value.name).charAt(0).toUpperCase()+(value.name).slice(1)}</b></Typography>
         {value.types.map(type=>{return <Typography><b>Type: </b>{type.type.name}</Typography>})}
         <Typography variant="body2"><b>Weight: </b> {value.weight} kg</Typography>
       </CardContent>
       <CardActions>
-            <Button onClick={remove}>Borrar</Button>
-            <Button size="small">❤</Button>
-          </CardActions>
+        <Button onClick={remove}>Borrar</Button>
+        <Button size="small">❤</Button>
+      </CardActions>
+      </div>
+
     </Card> 
 
   )

@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokeList from './PokeList/PokeList';
+import pokeball from './../../assets/pokeball.png'
+
 
 
 const Main = () => {
 
   //Llamamos a la función useState con valor inicial del estado falsy por defecto y nos devuelve dos constantes en un array. El primero es el estado actual y el segundo es el método para actualizar ese estado. 
 
+  
+
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemon] = useState([]); // Para guardar los pokemon
 
   /*   const [loading, setLoading] = useState(true) */
+
+
 
   useEffect(() => {
 
@@ -20,15 +26,17 @@ const Main = () => {
         try {
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
           const result = response.data;
-          setPokemon([result, ...pokemon]); 
+          setPokemon([...pokemon,result]); 
+         
+          
 
         } catch (e) {
           setPokemon([]) 
         }
       }
-
       axiosPokemon();
     }
+    //eslint-disable-next-line
   }, [value]); //cada vez que cambie value (estado) se vuelve a lanzar useEffect()
 
   //aqui guardo el valor del input del pokemon que se busca
@@ -51,9 +59,12 @@ const Main = () => {
     <section className='main'>
 
       <div className='searcher'>
-        <h1>Completa tu Pokédex introduciendo su nombre o su número identificador!</h1>
+        
+        <h1 className='h1-main'>Completa la Pokédex buscando tu pokemon por su nombre o usando su número de la Pokédex Nacional!</h1>
+      
         <form onSubmit={handleSubmit} className="form-searcher">
           <input name="search" type="text" placeholder='Busca aquí tu pokemon' />
+          
           <input type="submit" value="Buscar" />
         </form>
       </div>
