@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokeList from './PokeList/PokeList';
+import { useDebounce } from 'use-debounce';
+
 
 
 const Main = () => {
@@ -12,8 +14,8 @@ const Main = () => {
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [pokemon, setPokemon] = useState([]); // Para guardar los pokemon
 
-  /*   const [loading, setLoading] = useState(true) */
-
+  //para evitar que en cada tecleado haga una búsqueda y la haga cuando pase el tiempo que le indiquemos
+  const debouncedValue = useDebounce(value, 500);
 
 
   useEffect(() => {
@@ -38,7 +40,7 @@ const Main = () => {
   }, [value]); //cada vez que cambie value (estado) se vuelve a lanzar useEffect()
 
   //aqui guardo el valor del input del pokemon que se busca
-  const handleSubmit = e => {
+  const onChangeHandler = e => {
     e.preventDefault();
     const newPokemon = e.target.search.value
     setValue(newPokemon)
@@ -58,9 +60,8 @@ const Main = () => {
 
       <div className='searcher'>
         <h1>Completa tu Pokédex introduciendo su nombre o su número identificador!</h1>
-        <form onSubmit={handleSubmit} className="form-searcher">
-          <input name="search" type="text" placeholder='Busca aquí tu pokemon' />
-          <input type="submit" value="Buscar" />
+        <form onChange={onChangeHandler} className="form-searcher">
+          <input name="search" type="text" placeholder='Busca aquí tu pokemon'/>
         </form>
       </div>
 
