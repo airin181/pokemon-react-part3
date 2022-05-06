@@ -14,7 +14,7 @@ function CardPokemon ({value, remove}) {
     
     <Card sx={{ width: 250, margin:1 }}>
 
-      < CardMedia component="img" image={img} alt="pokemon" className='pokemon-img'sx={{ width: 300, margin:1 }}/> 
+      < CardMedia component="img" image={img} alt="pokemon" className='pokemon-img'sx={{ margin:1 }}/> 
 
       <div className='card-content'>
       <CardContent >

@@ -1,18 +1,16 @@
 import React from "react";
 import Card from './Card/Card'
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 const PokeList = ({value, remove}) => {
-  console.log('value --> ',{value});
-  console.log('remove --> ',{remove});
-
   
-
   return (<div className="pokelist-div">
 
 {(value.length !== 0
         ? 
-        value.map((poke, i)=><Card value={poke} key = {i} remove={() => remove(i)} />)
+        value.map((poke, i)=><Card value={poke} key = {uuidv4()} remove={() => remove(i)} />)
         : "")
       }
 
