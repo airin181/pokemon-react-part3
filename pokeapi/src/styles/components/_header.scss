@@ -4,33 +4,47 @@
 //
 
 
-@mixin header_style {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-family: 'Radio Canada', sans-serif;
-    & > img {
-            width: 15em;
-            margin-top: $spacing-md;
-        }
-        & > h3 {
-            border-bottom: dotted;
-    color: white;
-        }
-        & > .user{
-            display: flex;
-            & > p {
-                color: $text-color;
-                margin-right: $spacing-md;
-            }
-        }
-}
 .header{
-    background-color: $menu-color;
-    @include header_style();
+    width: 100%;
+    height: 100px;
+    background-color: #0086ff;
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-.header-dark{
-    background-color: $menu-color-dark;
-    @include header_style();
+
+#logo-pokedex{
+    width: 100px;
+    margin-left: 2em;
 }
+
+@media only screen and (max-width: 600px){
+
+    .header{
+        width: 100%;
+        height: 100px;
+        background-color: #0086ff;
+        box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        align-content: center;
+        padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	
+    }
+    
+
+    #logo-pokedex{
+        width: 100px;
+        margin-left: 0;
+    }
+
+}
+
