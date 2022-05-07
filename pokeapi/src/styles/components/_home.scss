@@ -1,0 +1,33 @@
+.h1-home{
+    font-size: 33px;
+    font-family: "Rajdhani";
+    margin-bottom: 0;
+    text-align: center;
+    width: 80%;
+  }
+
+  .h2-home{
+    font-size: 23px;
+    font-family: "Rajdhani";
+    width: 50%;
+    text-align: center;
+  }
+
+  .home-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-buttons a{
+    margin: 1em;
+    width: 260px;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 54px;
+  }
