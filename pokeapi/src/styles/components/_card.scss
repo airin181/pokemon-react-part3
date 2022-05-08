@@ -53,10 +53,11 @@
 
  //card en row
  #card-container{
-    width: 360px;
+    width: 300px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin: 1em;
+    margin-bottom: 40px;
   
   }
 
@@ -66,7 +67,7 @@
     //card
     #card-container{
         flex-direction: row;
-        width: 380px;  
+        width: 440px; 
     }
 
 }

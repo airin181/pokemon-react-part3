@@ -9,12 +9,11 @@ import Stack from '@mui/material/Stack';
 
 const Search = () => {
 
-  const {setValue, lastPokemon, debouncedValue} = useContext(pokemonContext)
+  const {setValue, lastPokemon, debouncedValue, repeated, notFound, pokemon} = useContext(pokemonContext)
   console.log('clog 1pokemon en SEARCH --->', lastPokemon);
 
 
-  /* const [repeated, setRepeated] = useState(false) //comprobar si se escribe uno repe
-  const [notFound, setNotFound] = useState(false)*/
+
 
   //_________función para actualizar estado con el valor introducido en el input
   const handleChange = e => {
@@ -29,15 +28,13 @@ const Search = () => {
 
       
     <TextField id="outlined-basic" label="Busca aquí tu pokemon" variant="filled" name='user' onChange={handleChange} className="search"/> 
-    {debouncedValue? <Card pokemon={lastPokemon}/>:""}
     
-             
-        
+    {repeated ? <Stack id="stack"><Alert severity="warning">¡No puede haber pokemon repetidos! Inténtalo de nuevo 😃</Alert></Stack> : ""}
+    {notFound ? <Stack id="stack"><Alert severity="error">¡No se ha encontrado el pokemon que indicas! ¿Estás seguro de que lo has escrito bien? 😃</Alert></Stack> : ""} 
+ 
+     {debouncedValue? <Card pokemon={lastPokemon}/>:""} 
 
 </div>;
-     /*{repeated ? <Stack><Alert severity="warning">¡No puede haber pokemon repetidos! Inténtalo de nuevo 😃</Alert></Stack> : "" }
-      {notFound ? <Stack><Alert severity="error">¡No se ha encontrado el pokemon que indicas! ¿Estás seguro de que lo has escrito bien? 😃</Alert></Stack> : "" }
- */
     };
 
 export default Search;

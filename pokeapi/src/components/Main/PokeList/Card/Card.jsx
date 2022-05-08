@@ -17,7 +17,7 @@ function CardPokemon ({pokemon}) {
       <CardContent >
         <Typography gutterBottom variant="h5" component="div"><b>{pokemon.name}</b></Typography>
         <Typography><b>Número ID: </b>{pokemon.id}</Typography>
-        <Typography><b>Type: </b>{pokemon.type}</Typography>
+        <Typography><b>Tipo: </b>{pokemon.type}</Typography>
         </CardContent> 
       <CardActions className='card-button'>
         <Button /*onClick={detail} */>Ver detalles</Button>
