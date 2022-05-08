@@ -9,8 +9,8 @@ import Stack from '@mui/material/Stack';
 
 function Form() {
 
-  const [send, setSend] = useState(""); // estado que tendrá un array con pokemon buscados
-  const onClick = () => setSend(true)
+/*   const [send, setSend] = useState(""); // estado que tendrá un array con pokemon buscados
+  const onClick = () => setSend(true) */
 
 
   return (
@@ -57,7 +57,7 @@ function Form() {
         <br />
         <div className="div-btn-form">
 
-        <Button variant="contained" color="primary" type="submit" onClick={onClick}>
+        <Button variant="contained" color="primary" type="submit"/*  onClick={onClick} */>
           Save
         </Button>
        
@@ -66,8 +66,8 @@ function Form() {
         Take me to News
         </Button>
         </div>
-        {send?<Stack><Alert severity="success">Publication saved!</Alert>
-        </Stack>:""}
+     {/*    {send?<Stack><Alert severity="success">Publication saved!</Alert>
+        </Stack>:""} */}
 
         
       </form>

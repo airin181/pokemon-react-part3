@@ -1,9 +1,9 @@
 .main {
     display: flex;
-    flex-direction: column;
+   
     align-items: center;
     justify-content: center;
-    margin-bottom: 54px;
+    margin-bottom: 20px;
   }
 
   .searcher{
@@ -69,10 +69,3 @@
     margin: 1em;
 }
 
-.search{
-  display: flex;
-}
-
-#root > div > section > div.searcher > div{
-  width: 50%;
-}
