@@ -11,8 +11,7 @@ import { Link } from "react-router-dom";
 const PokeList = () => {
 
   const { pokemon } = useContext(pokemonContext)
-  console.log('clog en POKELIST de pokemon --->', pokemon);
-
+  
   const paintPokemon = () => {
     return pokemon.map((poke, i) => <Card pokemon={poke} key={uuidv4()} />)
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Main from './components/Main/Main'
 import Header from './components/Header'
 import Footer from './components/Footer/Footer'
@@ -17,9 +17,16 @@ function App() {
   const [value, setValue] = useState(""); // Para guardar el pokemon que se busca en el input
   const [debouncedValue] = useDebounce(value, 1500) // valor de texto con retardo
 
+  const [repeated, setRepeated] = useState(false) //comprobar si se escribe uno repe
+  const [notFound, setNotFound] = useState(false) //si existe
+
  const pokemonToSearch = (input) => {
   setValue(input)
  }
+
+ const createPokemon = (input) => {
+  setPokemon([...pokemon, input])
+}
 
   //petición http 
   useEffect(() => {
@@ -31,7 +38,7 @@ function App() {
 
         if (debouncedValue && pokemon.every(e => e.name !== debouncedValue)) {
 
-        /*   setNotFound(false)  */
+          setNotFound(false)
           const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${debouncedValue}`);
           const result = response.data;
 
@@ -45,23 +52,20 @@ function App() {
           }
           
           setPokemon([pokemonInfo,...pokemon]);
-          console.log('clog pokemon en APP --->', pokemon);
-
-          setLastPokemon(pokemonInfo)
-          console.log('clog 1pokemon en APP --->', lastPokemon);
-          /* setRepeated(false) */
+          setLastPokemon(pokemonInfo) 
+          setRepeated(false)
         
         } 
         
-        else if (debouncedValue && pokemon.some(e => e.name === debouncedValue)){
- /*          setRepeated(true);
-          setNotFound(false)  */
+        else if (debouncedValue && pokemon.every(e => e.name === debouncedValue)){
+          setRepeated(true);
+          setNotFound(false)
           
         }
 
       } catch (e) {
-      /*   setNotFound(true) 
-        setRepeated(false) */
+      setNotFound(true) 
+      setRepeated(false)
       }
     } 
     getPokemon()
@@ -73,6 +77,10 @@ function App() {
     debouncedValue,
     setValue,
     lastPokemon,
+    repeated,
+    notFound,
+    createPokemon
+
   }
  
 
