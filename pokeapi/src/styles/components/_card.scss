@@ -1,7 +1,8 @@
-
+@import '../utils/mixins.scss';
 
 .card-content{
     width: 100%;
+    @include column-center;
 }
 
 .css-o69gx8-MuiCardMedia-root{
@@ -13,6 +14,11 @@
     text-align: center;
 }
 
+.card-button{
+    display: flex;
+
+}
+
 .css-1spm653-MuiPaper-root-MuiCard-root{
 
     display: flex;
@@ -21,4 +27,49 @@
         align-items: center;
         width: 350px;
 }
+
+//max width de foto pokemon
+#root > div > section > div > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiCard-root.css-1spm653-MuiPaper-root-MuiCard-root > img{
+    max-width: 158px;
+    margin: 1em;
+    height: 170px;
+    object-fit: contain;
+}
+
+
+//parte texto card
+.card-content div:nth-child(2){
+
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    justify-content: center;
+    background-color: #ffcb03;
+    margin-bottom: 1em;
+    width: 135px;
+}
+
+
+
+ //card en row
+ #card-container{
+    width: 360px;
+    display: flex;
+    flex-direction: row;
+    margin: 1em;
+  
+  }
+
+  //versión desktop
+@media only screen and (min-width: 730px){
+
+    //card
+    #card-container{
+        flex-direction: row;
+        width: 380px;  
+    }
+
+}
+
+
 
