@@ -4,17 +4,8 @@ import { Link } from "react-router-dom";
 
 function Nav() {
 
-  const pages = ["Mi Pokédex", "Buscador", "Crear Pokemon"];
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = (event) => {
-    setAnchorElNav(null);
-  };
+ 
+  
 
   return (
     <div className="navbar-div">

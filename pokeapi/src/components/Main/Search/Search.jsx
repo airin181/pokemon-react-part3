@@ -1,7 +1,6 @@
 import { React, useContext } from "react";
 import Card from './../PokeList/Card/Card'
 import {pokemonContext} from './../../../context/pokemonContext';
-import { v4 as uuidv4 } from 'uuid';
 import TextField from '@mui/material/TextField';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
@@ -9,7 +8,7 @@ import Stack from '@mui/material/Stack';
 
 const Search = () => {
 
-  const {setValue, lastPokemon, debouncedValue, repeated, notFound, pokemon} = useContext(pokemonContext)
+  const {setValue, lastPokemon, debouncedValue, repeated, notFound} = useContext(pokemonContext)
 
   //_________función para actualizar estado con el valor introducido en el input
   const handleChange = e => {

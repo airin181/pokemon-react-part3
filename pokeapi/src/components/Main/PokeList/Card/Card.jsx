@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 
 
 
+
 function CardPokemon ({pokemon}) {
+
  
   return (
     
@@ -21,7 +23,7 @@ function CardPokemon ({pokemon}) {
         <Typography><b>Tipo: </b>{pokemon.type}</Typography>
         </CardContent> 
       <CardActions className='card-button'>
-        <Button type="submit" id="toDetail" component={Link} to="pokemon:id">Ver detalles</Button>
+        <Button type="submit" id="toDetail" component={Link}  to={`pokemon/${pokemon.id}`}>Ver detalles</Button>
       </CardActions>
       </div>
 

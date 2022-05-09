@@ -18,9 +18,9 @@ const Main = () => {
         <Route element={<PokeList/>} path='/pokedex'/>
         <Route element={<Form/>} path='/form'/>
         <Route element={<Search/>} path='/search'/>
-
+ 
         <Route element={<Detail/>} path='/pokedex/pokemon/:id'/>
-        <Route element={<Detail/>} path='/search/pokemon/:id'/>
+        <Route element={<Detail/>} path='/search/pokemon/:id'/> 
 
      
         
