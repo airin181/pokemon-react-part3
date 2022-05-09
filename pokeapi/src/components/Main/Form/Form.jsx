@@ -119,35 +119,6 @@ function Form() {
           </Stack>: ""}
           <Button type="submit" variant="outlined" component={Link} to="/pokedex">IR A MI POKÉDEX</Button>
         </div>
-
-        {/* 
-    
-        <label>Tipo:
-        <select required {...register("type")}>
-          <option value="bug">Bicho</option>
-          <option value="dark">Oscuro</option>
-          <option value="dragon">Dragón</option>
-          <option value="electric">Eléctrico</option>
-          <option value="fairy">Hada</option>
-          <option value="fighting">Lucha</option>
-          <option value="fire">Fuego</option>
-          <option value="flying">Volador</option>
-          <option value="ghost">Fantasma</option>
-          <option value="grass">Planta</option>
-          <option value="ground">Tierra</option>
-          <option value="ice">Hielo</option>
-          <option value="normal">Normal</option>
-          <option value="poison">Veneno</option>
-          <option value="psychic">Psíquico</option>
-          <option value="rock">Roca</option>
-          <option value="steel">Acero</option>
-          <option value="water">Agua</option>
-          <option value="water">Siniestro</option>
-        </select>
-        </label>
-   */}
-
-
       </form>
     </div>
   )
