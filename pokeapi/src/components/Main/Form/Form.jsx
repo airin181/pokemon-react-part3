@@ -115,9 +115,9 @@ function Form() {
         </Box> 
         <div className='save-msg'>
           <Button type="submit" variant="contained">CREAR</Button>
-          <Button type="submit" variant="outlined" component={Link} to="/pokedex">IR A MI POKÉDEX</Button>
           {send ? <Stack><Alert severity="success">¡Pokemon creado!</Alert>
           </Stack>: ""}
+          <Button type="submit" variant="outlined" component={Link} to="/pokedex">IR A MI POKÉDEX</Button>
         </div>
 
         {/* 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
-import banner from './../../../assets/banner.webp'
+import banner from './../../../assets/banner.webp';
 
 
 const Home = () => {

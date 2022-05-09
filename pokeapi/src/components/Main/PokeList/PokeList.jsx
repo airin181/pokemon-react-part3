@@ -29,7 +29,7 @@ const PokeList = () => {
         paintPokemon()
         : (<div className="msg-btn">
 
-          <Stack><Alert severity="warning">Dirígete al buscador para añadir pokémon a tu Pokédex 😃</Alert></Stack>
+        <Stack><Alert severity="warning">Dirígete al buscador para añadir pokémon a tu Pokédex 😃</Alert></Stack>
         <Button component={Link} to="/search" variant="contained" color="inherit" type="submit" sx={{ bgcolor: 'warning.light' }}>Ir al buscador</Button>
 
         </div>)

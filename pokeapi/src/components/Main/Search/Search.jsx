@@ -10,10 +10,6 @@ import Stack from '@mui/material/Stack';
 const Search = () => {
 
   const {setValue, lastPokemon, debouncedValue, repeated, notFound, pokemon} = useContext(pokemonContext)
-  console.log('clog 1pokemon en SEARCH --->', lastPokemon);
-
-
-
 
   //_________función para actualizar estado con el valor introducido en el input
   const handleChange = e => {
