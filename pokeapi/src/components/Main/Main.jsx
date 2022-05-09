@@ -4,19 +4,12 @@ import Detail from './Detail/Detail';
 import Form from './Form/Form';
 import Search from './Search/Search';
 import Home from './Home/Home';
-
-
 import {Route, Routes} from 'react-router-dom';
 
 
 const Main = () => {
 
-/* 
-  //_________función de eliminar pokemon que enviamos por props a pokelist
-  const removePokemon = (i) => {
-  const remainingPokemon = pokemon.filter((poke, j)=> i!== j);
-  setPokemon(remainingPokemon);
-}   */ 
+
 
   return (
     <section className='main'>
@@ -25,7 +18,13 @@ const Main = () => {
         <Route element={<PokeList/>} path='/pokedex'/>
         <Route element={<Form/>} path='/form'/>
         <Route element={<Search/>} path='/search'/>
-        <Route element={<Detail/>} path='/pokemon/:id'/>
+
+        <Route element={<Detail/>} path='/pokedex/pokemon/:id'/>
+        <Route element={<Detail/>} path='/search/pokemon/:id'/>
+
+     
+        
+      
       </Routes> 
     </section>
   )

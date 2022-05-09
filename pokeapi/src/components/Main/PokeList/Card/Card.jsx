@@ -3,6 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import {CardMedia, Button, CardActions} from '@mui/material';
+import { Link } from "react-router-dom";
 
 
 
@@ -20,7 +21,7 @@ function CardPokemon ({pokemon}) {
         <Typography><b>Tipo: </b>{pokemon.type}</Typography>
         </CardContent> 
       <CardActions className='card-button'>
-        <Button /*onClick={detail} */>Ver detalles</Button>
+        <Button type="submit" id="toDetail" component={Link} to="pokemon:id">Ver detalles</Button>
       </CardActions>
       </div>
 
