@@ -72,12 +72,12 @@ function Detail() {
             
             <Typography><b>Height: </b>{pokemonDetails.height}</Typography>
             <Typography><b>Weight: </b>{pokemonDetails.weight}</Typography>
-             <Typography><b>Main attacks: </b>{pokemonDetails.main_attack.map(p => <p>{p}</p>)}, </Typography>
+            <Typography><b>Main attacks:</b>{pokemonDetails.main_attack.map(p => <li>{p}</li>)} </Typography>
 
           </CardContent>
 
           <CardActions className='card-button'>
-            <Button type="submit" id="close" component={Link} to={`pokemon/${id}`}>Cerrar</Button>
+            <Button type="submit" id="close" component={Link} to="/pokedex">Volver a Pokédex</Button>
           </CardActions>
         </div>
 
