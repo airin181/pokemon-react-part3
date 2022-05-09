@@ -1,0 +1,45 @@
+.search{
+    display: flex;
+  }
+
+  .h1-search{
+    font-size: 30px;
+    font-family: "Rajdhani";
+    margin-bottom: 0;
+    text-align: center;
+    width: 80%;
+  }
+
+  .h2-search{
+    font-size: 20px;
+    font-family: "Rajdhani";
+    width: 90%;
+    text-align: center;
+  }
+
+  #stack{
+    width: 360px;
+  }
+
+  //buscador 
+  #root > div > section > div > div.MuiFormControl-root.MuiTextField-root.search.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 360px;
+    margin-bottom: 1em;
+  }
+
+   //versión desktop
+@media only screen and (min-width: 730px) {
+  
+  //buscador 
+  #root > div > section > div > div.MuiFormControl-root.MuiTextField-root.search.css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+    width: 380px;
+  }
+
+  .h2-search{
+    font-size: 23px;
+  }
+  .h1-search{
+    font-size: 33px;
+  }
+ 
+}

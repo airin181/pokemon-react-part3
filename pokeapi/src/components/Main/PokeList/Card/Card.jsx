@@ -1,30 +1,27 @@
-import React from 'react'
+import { React } from "react";
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import {CardMedia, Button, CardActions} from '@mui/material';
+import { Link } from "react-router-dom";
 
 
 
-function CardPokemon ({value, remove}) {
-
-  const img = value.sprites.other.dream_world.front_default ? value.sprites.other.dream_world.front_default :  ""
-
+function CardPokemon ({pokemon}) {
+ 
   return (
     
-    <Card sx={{ width: 250, margin:1 }}>
+    <Card sx={{ width: 250, margin:1 }} id="card-container">
 
-      < CardMedia component="img" image={img} alt="pokemon" className='pokemon-img'sx={{ width: 300, margin:1 }}/> 
-
+      < CardMedia component="img" image={pokemon.image} alt="pokemon" className='pokemon-img'sx={{ margin:1 }}/>
       <div className='card-content'>
       <CardContent >
-        <Typography gutterBottom variant="h5" component="div"><b>{(value.name).charAt(0).toUpperCase()+(value.name).slice(1)}</b></Typography>
-        {value.types.map(type=>{return <Typography><b>Type: </b>{type.type.name}</Typography>})}
-        <Typography variant="body2"><b>Weight: </b> {value.weight} kg</Typography>
-      </CardContent>
-      <CardActions>
-        <Button onClick={remove}>Borrar</Button>
-        <Button size="small">❤</Button>
+        <Typography gutterBottom variant="h5" component="div"><b>{pokemon.name}</b></Typography>
+        <Typography><b>Número ID: </b>{pokemon.id}</Typography>
+        <Typography><b>Tipo: </b>{pokemon.type}</Typography>
+        </CardContent> 
+      <CardActions className='card-button'>
+        <Button type="submit" id="toDetail" component={Link} to="pokemon:id">Ver detalles</Button>
       </CardActions>
       </div>
 
